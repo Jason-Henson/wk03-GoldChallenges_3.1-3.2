@@ -19,3 +19,47 @@
 //? not required:  If you liked to style it, feel free to add a stylesheet to your HTML.
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+// declare varables 
+const answer = parseInt(Math.random() * 10);
+gameLost = false;
+const form = document.getElementById('main');
+let guess = document.getElementById('input');
+
+
+// event listener
+form.addEventListener('submit', start);
+
+function start(e){
+    e.preventDefault();
+    i = 1;
+    console.log('guess', guess.value);
+    console.log('answer', answer)
+    console.log('counter', i);
+    while(i < 3){
+        if(guess.value == answer){
+            window.alert('You win you guessed the anwser');
+        } else if(guess.value > answer){
+            window.alert('Not quite go a little lower');
+            i = i + 1;
+            console.log(i); 
+        } else {
+            window.alert('Not quite go a little higher')
+            i = i + 1
+            console.log(i);
+        }
+    }
+}
+
+// function start(guess){
+//     e.preventDefault();
+//     if(guess === answer){
+//         reponse = form.createElement('p');
+//         response.innerText(`Great job you guessed correctly!`);
+//         form.appendChild(response);           
+//     } else{
+//         reponse = form.createElement('p');
+//         response.innerText(`Sorry your guess is wrong try again`);
+//         form.appendChild(response);         
+//     }       
+// }
